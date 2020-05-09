@@ -1,6 +1,6 @@
 {
   "name": "@react-native-hero/font-icon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react native font icon",
   "main": "index.js",
   "scripts": {
