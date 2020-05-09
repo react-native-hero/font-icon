@@ -1,17 +1,19 @@
-import { NativeModules } from 'react-native'
+import {
+  Platform,
+  NativeModules,
+} from 'react-native'
 
 const { RNTFontIcon } = NativeModules
 
-import createFont from './js/createFont'
-import createIcon from './js/createIcon'
-import createFontelloIcon from './js/createFontelloIcon'
-import createIcomoonIcon from './js/createIcomoonIcon'
+export { default as createIcon } from './js/createIcon'
+export { default as createFontelloIcon } from './js/createFontelloIcon'
+export { default as createIcomoonIcon } from './js/createIcomoonIcon'
 
-export const createFont = createFont
-export const createIcon = createIcon
-export const createFontelloIcon = createFontelloIcon
-export const createIcomoonIcon = createIcomoonIcon
-
-export function enumFonts() {
-  RNTFontIcon.enumFonts()
-}
+export const enumFonts = Platform.select({
+  ios() {
+    return RNTFontIcon.enumFonts()
+  },
+  android() {
+    return Promise.resolve({})
+  }
+})

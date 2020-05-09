@@ -1,11 +1,11 @@
-import React, { 
+import React, {
   PureComponent,
 } from 'react'
 
 import {
   Text,
   Platform,
-} from './react-native'
+} from 'react-native'
 
 import PropTypes from 'prop-types'
 
@@ -24,7 +24,7 @@ export default function createIcon(glyphMap, fontFamily, fontFile) {
       name: PropTypes.oneOf(Object.keys(glyphMap)),
       size: PropTypes.number,
       color: PropTypes.oneOfType([
-        PropTypes.string, 
+        PropTypes.string,
         PropTypes.number,
       ]),
       style: Text.propTypes.style,
@@ -32,12 +32,12 @@ export default function createIcon(glyphMap, fontFamily, fontFile) {
 
     render() {
 
-      const { 
-        name, 
-        size, 
-        color, 
-        style, 
-        ...props 
+      const {
+        name,
+        size,
+        color,
+        style,
+        ...props
       } = this.props
 
       let glyph = name ? glyphMap[name] || '?' : ''
@@ -57,7 +57,7 @@ export default function createIcon(glyphMap, fontFamily, fontFile) {
       props.style = [styleDefaults, style, styleOverrides]
 
       return (
-        <Text 
+        <Text
           {...props}
         >
           {glyph}

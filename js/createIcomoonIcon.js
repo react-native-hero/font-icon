@@ -10,10 +10,12 @@ export default function createIcomoonIcon(config, fontFamily, fontFile) {
     })
   })
 
+  const family = fontFamily || config.preferences.fontPref.metadata.fontFamily
+
   return createIcon(
-    glyphMap, 
-    fontFamily || config.preferences.fontPref.metadata.fontFamily, 
-    fontFile
+    glyphMap,
+    family,
+    fontFile || `${family}.ttf`
   )
 
 }

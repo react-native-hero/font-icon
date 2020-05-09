@@ -4,14 +4,16 @@
 
 RCT_EXPORT_MODULE(RNTFontIcon);
 
-RCT_EXPORT_METHOD(enumFonts) {
+RCT_EXPORT_METHOD(enumFonts:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
     
+    NSMutableArray *fonts = [[NSMutableArray alloc] init];
     for (NSString *fontFamily in [UIFont familyNames]) {
-        NSLog(@"font family: %@", fontFamily);
-        for (NSString *fontName in [UIFont fontNamesForFamilyName: fontFamily]) {
-            NSLog(@"font name: %@", fontName);
-        }
+        [fonts addObject:fontFamily];
     }
+    
+    resolve(@{
+        @"fonts": fonts
+    });
     
 }
 
