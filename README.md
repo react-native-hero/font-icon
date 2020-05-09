@@ -46,7 +46,7 @@ $ react-native link @react-native-hero/font-icon
 
 2. Put the font file in the `<project>/assets/fonts` folder.
 
-3. Create `<project>/react-native.config.js`:
+3. Edit `<project>/react-native.config.js`, add the assets.
 
 ```js
 module.exports = {
@@ -70,11 +70,23 @@ enumFonts().then(data => {
 })
 ```
 
-7. Here comes the core step, ios needs the `fontFamily`, but android just needs the font file name. For simplicity, I suggest you change the font file name to the fontFamily, then repeat the steps above.
+7. Here comes the **core** step, ios needs the `fontFamily`, but android just needs the font file name.
 
-8. If you just need a new font, that's all.
+8. If the font file name is not the `fontFamily`, You should to change the file name to the `fontFamily`.
 
-9. If you need a font icon, see the example below.
+9. You need the `unlink` command, but react native can't unlink assets, you have to unlink assets by yourself.
+
+10. For Android, just remove the folder `android/app/src/main/assets/`.
+
+11. For iOS, remove all fonts from `Info.plist` file、`Build Phases > Copy Bundle Resources`、`Resources` in the Xcode naivgator panel. 
+
+12. After unlink, run `npx react-native link` again.
+
+13, If you just need a new font, that's all.
+
+14. If you need a font icon, see the example below.
+
+15. Sorry for my english, may be you can provide a better explanation.
 
 ## Example
 
