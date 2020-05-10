@@ -74,9 +74,7 @@ enumFonts().then(data => {
 
 7. Here comes the **core** step, ios needs the `fontFamily`, but android just needs the font file name.
 
-8. If the font file name is not the `fontFamily`, You should to change the file name to the `fontFamily`.
-
-13. Run `react-native-asset` again.
+8. If the font file name is not the `fontFamily`, you should to change the file name to the `fontFamily`, then run `react-native-asset` again.
 
 14. If you just need a new font, that's all.
 
