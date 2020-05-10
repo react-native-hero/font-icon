@@ -42,6 +42,8 @@ $ react-native link @react-native-hero/font-icon
 
 ## Steps
 
+[react-native-asset](https://github.com/unimonkiez/react-native-asset) is recommend.
+
 1. Download your font file, such as `abc.ttf`.
 
 2. Put the font file in the `<project>/assets/fonts` folder.
@@ -54,7 +56,7 @@ module.exports = {
 };
 ```
 
-4. Run `npx react-native link`.
+4. Run `react-native-asset`.
 
 5. At this point, the font is installed, but you don't know the `fontFamily` of the font.
 
@@ -74,19 +76,13 @@ enumFonts().then(data => {
 
 8. If the font file name is not the `fontFamily`, You should to change the file name to the `fontFamily`.
 
-9. You need the `unlink` command, but react native can't unlink assets, you have to unlink assets by yourself.
+13. Run `react-native-asset` again.
 
-10. For Android, just remove the folder `android/app/src/main/assets/`.
+14. If you just need a new font, that's all.
 
-11. For iOS, remove all fonts from `Info.plist` file、`Build Phases > Copy Bundle Resources`、`Resources` in the Xcode naivgator panel. 
+15. If you need a font icon, see the example below.
 
-12. After unlink, run `npx react-native link` again.
-
-13, If you just need a new font, that's all.
-
-14. If you need a font icon, see the example below.
-
-15. Sorry for my english, may be you can provide a better explanation.
+16. Sorry for my english, may be you can provide a better explanation.
 
 ## Example
 
