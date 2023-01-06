@@ -27,7 +27,7 @@ export default function createIcon(glyphMap, fontFamily, fontFile) {
         PropTypes.string,
         PropTypes.number,
       ]),
-      style: Text.propTypes.style,
+      style: PropTypes.style,
     }
 
     render() {
